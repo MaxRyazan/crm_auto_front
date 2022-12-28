@@ -1,0 +1,154 @@
+body, div {
+  margin: 0;
+  padding: 0;
+}
+
+.inline {
+  display: flex;
+}
+
+.main_container {
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.personal_data {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.inputs_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.buttons_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  margin-bottom: 70px;
+}
+
+.tables_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.one_table_container {
+  position: absolute;
+  width: 49.5%;
+}
+.one_table_container.table_left {
+  left: 0;
+  top: 0;
+}
+.one_table_container.table_right {
+  right: 0;
+  top: 0;
+}
+
+.data_title {
+  letter-spacing: 2px;
+  font-family: cursive;
+  transform: translate(10%, -12%);
+}
+
+.data_container {
+  display: flex;
+  width: 49%;
+  justify-content: center;
+}
+
+.btn {
+  width: 15%;
+  min-width: 100px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-family: cursive;
+  box-shadow: 3px 3px 0 darkgray;
+}
+.btn:hover {
+  border: 1px solid green;
+  color: green;
+}
+.btn:active {
+  border: 1px solid lightgreen;
+  color: lightgreen;
+}
+.btn.btn_red {
+  border: 1px solid darkred;
+  color: darkred;
+}
+.btn.btn_red:hover {
+  border: 1px solid red;
+  color: red;
+}
+.btn.btn_red:active {
+  border: 1px solid pink;
+  color: pink;
+}
+
+.input {
+  width: 15%;
+  min-width: 100px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  outline: none;
+  text-align: center;
+}
+.input::placeholder {
+  font-size: 12px;
+}
+
+.table_first_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.cell {
+  border: 1px solid darkgrey;
+  border-collapse: collapse;
+  width: 15%;
+  text-align: center;
+  height: 100%;
+  padding: 3px;
+}
+.cell.table_title {
+  font-family: cursive;
+}
+.cell.id {
+  width: 7%;
+}
+.cell.vin {
+  width: 18%;
+}
+.cell.car_mark {
+  width: 10%;
+}
+.cell.description {
+  width: 19%;
+}
+.cell span {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=styles.css.map */

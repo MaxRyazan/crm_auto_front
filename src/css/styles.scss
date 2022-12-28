@@ -1,0 +1,140 @@
+@mixin w_mw_bgc_bor_bor-r($w, $mw, $bgc, $bor, $bor-r){
+  width: $w;
+  min-width: $mw;
+  background-color: $bgc;
+  border: 1px solid $bor;
+  border-radius: $bor-r;
+}
+@mixin border_color($border, $color){
+  border: 1px solid $border;
+  color: $color;
+}
+
+body, div{
+  margin: 0;
+  padding: 0;
+}
+.inline{
+  display: flex;
+}
+.main_container{
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.personal_data{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.inputs_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+.buttons_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  margin-bottom: 70px;
+}
+.tables_container{
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.one_table_container{
+  position: absolute;
+  width: 49.5%;
+  &.table_left{
+    left: 0;
+    top: 0;
+  }
+  &.table_right{
+    right: 0;
+    top: 0;
+  }
+}
+.data_title{
+  letter-spacing: 2px;
+  font-family: cursive;
+  transform: translate(10%, -12%);
+}
+.data_container{
+  display: flex;
+  width: 49%;
+  justify-content: center;
+}
+.btn{
+  @include w_mw_bgc_bor_bor-r(15%, 100px, white, black, 4px);
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-family: cursive;
+  box-shadow: 3px 3px 0 darkgray;
+  &:hover{
+    @include border_color(green, green)
+  }
+  &:active{
+    @include border_color(lightgreen, lightgreen)
+  }
+  &.btn_red{
+    @include border_color(darkred, darkred);
+    &:hover{
+      @include border_color(red, red)
+    }
+    &:active{
+      @include border_color(pink, pink)
+    }
+  }
+}
+.input{
+  @include w_mw_bgc_bor_bor-r(15%, 100px, white, black, 4px);
+  padding: 10px 0;
+  letter-spacing: 1px;
+  outline: none;
+  text-align: center;
+  &::placeholder{
+    font-size: 12px;
+  }
+}
+
+
+.table_first_row{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.cell{
+  border: 1px solid darkgrey;
+  border-collapse: collapse;
+  width: 15%;
+  text-align: center;
+  height: 100%;
+  padding: 3px;
+  &.table_title{
+    font-family: cursive;
+  }
+  &.id{
+    width: 7%;
+  }
+  &.vin{
+    width: 18%;
+  }
+  &.car_mark{
+    width: 10%;
+  }
+  &.description{
+    width: 19%;
+  }
+  span{
+    font-size: 14px;
+  }
+}
