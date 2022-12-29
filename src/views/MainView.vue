@@ -37,30 +37,12 @@
             />
             <app-button class="btn_red" @action="clearTable">Очистить таблицу</app-button>
         </div>
-
         <div class="tables_container">
-            <div class="one_table_container table_left" v-for="detail in state.allDetails" :key="detail.id">
-                <div class="table_first_row">
-                    <div class="table_title cell id"><span>Id</span></div>
-                    <div class="table_title cell"><span>Название</span></div>
-                    <div class="table_title cell vin"><span>VIN</span></div>
-                    <div class="table_title cell"><span>Артикул</span></div>
-                    <div class="table_title cell"><span>Производитель</span></div>
-                    <div class="table_title cell car_mark"><span>Марка</span></div>
-                    <div class="table_title cell description"><span>Описание</span></div>
-                </div>
-                <app-table :detail="detail"/>
+            <div class="one_table_container table_left">
+                <app-table :details="state.allDetails"/>
             </div>
             <div class="one_table_container table_right">
-                <div class="table_first_row">
-                    <div class="table_title cell id"><span>Id</span></div>
-                    <div class="table_title cell"><span>Название</span></div>
-                    <div class="table_title cell vin"><span>VIN</span></div>
-                    <div class="table_title cell"><span>Артикул</span></div>
-                    <div class="table_title cell"><span>Производитель</span></div>
-                    <div class="table_title cell car_mark"><span>Марка</span></div>
-                    <div class="table_title cell description"><span>Описание</span></div>
-                </div>
+                <app-table :details="state.orderDetails"/>
             </div>
         </div>
 
@@ -71,10 +53,13 @@
 import AppButton from '@/components/AppButton'
 import AppPersonalData from "@/components/AppPersonalData";
 import AppInput from '@/components/AppInput'
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 import { useStore } from 'vuex'
 import AppTable from '@/components/AppTable'
 
+onMounted(async () => {
+    state.allDetails = await store.dispatch('getAllDetails')
+})
 const store = useStore()
 const state = store.state
 

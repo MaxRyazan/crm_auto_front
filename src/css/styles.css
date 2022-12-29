@@ -1,3 +1,12 @@
+@keyframes border {
+  50% {
+    border: 1px solid red;
+    box-shadow: 2px 2px red;
+  }
+  100% {
+    border: 1px solid black;
+  }
+}
 body, div {
   margin: 0;
   padding: 0;
@@ -46,16 +55,20 @@ body, div {
 }
 
 .one_table_container {
-  position: absolute;
-  width: 49.5%;
-}
-.one_table_container.table_left {
-  left: 0;
-  top: 0;
+  position: relative;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
 }
 .one_table_container.table_right {
   right: 0;
   top: 0;
+}
+
+.border_red {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
 }
 
 .data_title {
@@ -116,24 +129,41 @@ body, div {
 .input::placeholder {
   font-size: 12px;
 }
+.input:hover {
+  animation: border 3s linear infinite;
+}
 
 .table_first_row {
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 10px;
+  align-items: center;
+  border: 1px solid darkgrey;
+}
+
+.column {
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid darkgrey;
+}
+
+.border_green {
+  border: 1px solid green;
 }
 
 .cell {
-  border: 1px solid darkgrey;
-  border-collapse: collapse;
+  border-left: 1px solid darkgrey;
   width: 15%;
   text-align: center;
   height: 100%;
   padding: 3px;
+  font-family: cursive;
 }
 .cell.table_title {
-  font-family: cursive;
+  background-color: steelblue;
 }
 .cell.id {
   width: 7%;
@@ -141,14 +171,26 @@ body, div {
 .cell.vin {
   width: 18%;
 }
+.cell.article {
+  width: 7%;
+}
 .cell.car_mark {
-  width: 10%;
+  width: 17%;
 }
 .cell.description {
   width: 19%;
 }
+.cell.manufacturer {
+  width: 13%;
+}
 .cell span {
   font-size: 14px;
+}
+
+.mark {
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
 }
 
 /*# sourceMappingURL=styles.css.map */

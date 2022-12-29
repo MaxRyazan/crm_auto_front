@@ -9,6 +9,15 @@
   border: 1px solid $border;
   color: $color;
 }
+@keyframes border {
+  50%{
+    border: 1px solid red;
+    box-shadow: 2px 2px red;
+  }
+  100%{
+    border: 1px solid black;
+  }
+}
 
 body, div{
   margin: 0;
@@ -51,16 +60,22 @@ body, div{
   justify-content: space-between;
 }
 .one_table_container{
-  position: absolute;
-  width: 49.5%;
+  position: relative;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
   &.table_left{
-    left: 0;
-    top: 0;
+
   }
   &.table_right{
     right: 0;
     top: 0;
   }
+}
+.border_red{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
 }
 .data_title{
   letter-spacing: 2px;
@@ -103,24 +118,38 @@ body, div{
   &::placeholder{
     font-size: 12px;
   }
+  &:hover{
+    animation: border 3s linear infinite;
+  }
 }
 
-
 .table_first_row{
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
-}
-.cell{
+  margin-top: 10px;
+  align-items: center;
   border: 1px solid darkgrey;
-  border-collapse: collapse;
+}
+.column{
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid darkgrey;
+}
+.border_green{
+  border: 1px solid green;
+ }
+.cell{
+  border-left: 1px solid darkgrey;
   width: 15%;
   text-align: center;
   height: 100%;
   padding: 3px;
+  font-family: cursive;
   &.table_title{
-    font-family: cursive;
+    background-color: steelblue;
   }
   &.id{
     width: 7%;
@@ -128,13 +157,25 @@ body, div{
   &.vin{
     width: 18%;
   }
+  &.article{
+    width: 7%;
+  }
   &.car_mark{
-    width: 10%;
+    width: 17%;
+
   }
   &.description{
     width: 19%;
   }
+  &.manufacturer{
+    width: 13%;
+  }
   span{
     font-size: 14px;
   }
+}
+.mark{
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
 }
