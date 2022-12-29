@@ -88,24 +88,29 @@ body, div{
   justify-content: center;
 }
 .btn{
-  @include w_mw_bgc_bor_bor-r(15%, 100px, white, black, 4px);
+  @include w_mw_bgc_bor_bor-r(15%, 100px, steelblue, black, 4px);
   padding: 10px 0;
   letter-spacing: 1px;
   font-family: cursive;
+  color: white;
   box-shadow: 3px 3px 0 darkgray;
   &:hover{
-    @include border_color(green, green)
+    @include border_color(_, black)
   }
   &:active{
-    @include border_color(lightgreen, lightgreen)
+    @include border_color(white, white);
+    box-shadow: none;
   }
   &.btn_red{
+    animation: border 2s linear infinite;
+    background-color: white;
     @include border_color(darkred, darkred);
     &:hover{
       @include border_color(red, red)
     }
     &:active{
-      @include border_color(pink, pink)
+      background-color: pink;
+      @include border_color(black, black)
     }
   }
 }
@@ -122,8 +127,11 @@ body, div{
     animation: border 3s linear infinite;
   }
 }
-
+.w49{
+  width: 49.5%;
+}
 .table_first_row{
+  position: relative;
   padding: 0;
   width: 100%;
   display: flex;
@@ -162,9 +170,9 @@ body, div{
   }
   &.car_mark{
     width: 17%;
-
   }
   &.description{
+    position: relative;
     width: 19%;
   }
   &.manufacturer{
@@ -178,4 +186,13 @@ body, div{
   width: 100%;
   text-align: center;
   font-family: cursive;
+}
+.select{
+  width: 30px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
 }

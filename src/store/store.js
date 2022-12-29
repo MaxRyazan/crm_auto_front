@@ -1,16 +1,24 @@
 import { createStore } from 'vuex'
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 import actions from "@/js/actions";
 import getters from "@/js/getters";
+import mutations from "@/js/mutations";
 
 export default createStore({
     state:{
-        allDetails: [],
+        allDetails: reactive([]),
         orderDetails: ref([]),
-        searchedDetails: []
+        searchedDetails: [],
+
+         article: ref(''),
+         manufacturer: ref(''),
+         name: ref(''),
+         vin: ref(''),
+         carMark: ref('')
     },
     actions: actions,
     getters: getters,
+    mutations: mutations
 })
 
 

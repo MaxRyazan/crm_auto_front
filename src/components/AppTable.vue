@@ -19,8 +19,8 @@
                 <div class="column">
                     <div class=" mark" v-for="mark in detail.carMarks" :key="mark">{{ mark }}</div>
                 </div>
-                <div class=" cell description">{{detail.description}}</div>
-
+                <div class="cell description">{{detail.description}}</div>
+                <img src="@/assets/images/arrow.png" alt="" class="select">
             </div>
         </div>
     </div>
@@ -31,3 +31,4 @@ import { defineProps } from 'vue'
 
 defineProps(['details'])
 </script>
+

@@ -11,9 +11,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
 
-const username = ref('Default')
-const job_title = ref('Default')
+const username = 'Default'
+const job_title = 'Default'
 
 </script>

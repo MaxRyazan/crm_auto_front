@@ -86,23 +86,27 @@ body, div {
 .btn {
   width: 15%;
   min-width: 100px;
-  background-color: white;
+  background-color: steelblue;
   border: 1px solid black;
   border-radius: 4px;
   padding: 10px 0;
   letter-spacing: 1px;
   font-family: cursive;
+  color: white;
   box-shadow: 3px 3px 0 darkgray;
 }
 .btn:hover {
-  border: 1px solid green;
-  color: green;
+  border: 1px solid _;
+  color: black;
 }
 .btn:active {
-  border: 1px solid lightgreen;
-  color: lightgreen;
+  border: 1px solid white;
+  color: white;
+  box-shadow: none;
 }
 .btn.btn_red {
+  animation: border 2s linear infinite;
+  background-color: white;
   border: 1px solid darkred;
   color: darkred;
 }
@@ -111,8 +115,9 @@ body, div {
   color: red;
 }
 .btn.btn_red:active {
-  border: 1px solid pink;
-  color: pink;
+  background-color: pink;
+  border: 1px solid black;
+  color: black;
 }
 
 .input {
@@ -133,7 +138,12 @@ body, div {
   animation: border 3s linear infinite;
 }
 
+.w49 {
+  width: 49.5%;
+}
+
 .table_first_row {
+  position: relative;
   padding: 0;
   width: 100%;
   display: flex;
@@ -178,6 +188,7 @@ body, div {
   width: 17%;
 }
 .cell.description {
+  position: relative;
   width: 19%;
 }
 .cell.manufacturer {
@@ -191,6 +202,16 @@ body, div {
   width: 100%;
   text-align: center;
   font-family: cursive;
+}
+
+.select {
+  width: 30px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 /*# sourceMappingURL=styles.css.map */
