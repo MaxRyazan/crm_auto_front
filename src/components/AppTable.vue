@@ -1,14 +1,6 @@
 <template>
     <div class="one_table_container table_right">
-        <div class="table_first_row">
-            <div class="table_title cell id"><span>Id</span></div>
-            <div class="table_title cell"><span>Название</span></div>
-            <div class="table_title cell vin"><span>VIN</span></div>
-            <div class="table_title cell"><span>Артикул</span></div>
-            <div class="table_title cell"><span>Производитель</span></div>
-            <div class="table_title cell car_mark"><span>Марка</span></div>
-            <div class="table_title cell description"><span>Описание</span></div>
-        </div>
+        <app-table-header/>
         <div v-for="detail in details" :key="detail.id">
             <div class="table_first_row">
                 <div class=" cell id">{{detail.id}}</div>
@@ -17,18 +9,45 @@
                 <div class=" cell">{{detail.article}}</div>
                 <div class=" cell">{{detail.manufacturer}}</div>
                 <div class="column">
-                    <div class=" mark" v-for="mark in detail.carMarks" :key="mark">{{ mark }}</div>
+                    <div class="mark" v-for="mark in detail.carMarks" :key="mark">{{ mark }}</div>
                 </div>
-                <div class="cell description">{{detail.description}}</div>
-                <img src="@/assets/images/arrow.png" alt="" class="select">
+                <div class="inline description">
+                    <div class="cell ">{{detail.description}}</div>
+                    <img v-if="inOrder" src="@/assets/images/arrow.png" alt=""
+                         class="select"
+                         title="В заказ"
+                         @click="$emit('addToOrder', detail.id)"
+                    >
+                    <img v-else src="@/assets/images/cross.png" alt=""
+                         class="select"
+                         title="В заказ"
+                         @click="$emit('deleteFromOrder', detail.id)"
+                    >
+                </div>
+            </div>
+            <div v-if="!inOrder" class="confirm_order">
+                <div class="data_title">Сумма заказа:</div>
+                <app-button  v-if="!inOrder">Оформить</app-button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import {defineEmits, defineProps} from 'vue'
+import AppButton from '@/components/AppButton'
+import AppTableHeader from "@/components/AppTableHeader";
 
-defineProps(['details'])
+defineEmits(['addToOrder'])
+defineProps({
+    details:{
+        type: Array,
+        required: true
+    },
+    inOrder: {
+        type: Boolean,
+        required: false
+    }
+})
 </script>
 

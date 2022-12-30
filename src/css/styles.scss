@@ -23,6 +23,9 @@ body, div{
   margin: 0;
   padding: 0;
 }
+* {
+  box-sizing: border-box;
+}
 .inline{
   display: flex;
 }
@@ -114,6 +117,11 @@ body, div{
     }
   }
 }
+.confirm_order{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
 .input{
   @include w_mw_bgc_bor_bor-r(15%, 100px, white, black, 4px);
   padding: 10px 0;
@@ -140,16 +148,11 @@ body, div{
   align-items: center;
   border: 1px solid darkgrey;
 }
-.column{
-  width: 17%;
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid darkgrey;
-}
 .border_green{
   border: 1px solid green;
  }
 .cell{
+  font-size: 75%;
   border-left: 1px solid darkgrey;
   width: 15%;
   text-align: center;
@@ -170,29 +173,35 @@ body, div{
   }
   &.car_mark{
     width: 17%;
-  }
-  &.description{
-    position: relative;
-    width: 19%;
-  }
-  &.manufacturer{
-    width: 13%;
+    border-left: 1px solid darkgrey;
   }
   span{
     font-size: 14px;
   }
+}
+.description{
+  position: relative;
+  width: 14%;
 }
 .mark{
   width: 100%;
   text-align: center;
   font-family: cursive;
 }
+.column{
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid darkgrey;
+}
 .select{
+  position: absolute;
   width: 30px;
   height: 20px;
+  max-width: 25%;
   background-color: white;
-  position: absolute;
-  right: 0;
+  right: 2px;
   top: 50%;
   transform: translate(0, -50%);
+  cursor: pointer;
 }

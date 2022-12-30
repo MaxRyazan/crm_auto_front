@@ -7,7 +7,7 @@ import mutations from "@/js/mutations";
 export default createStore({
     state:{
         allDetails: reactive([]),
-        orderDetails: ref([]),
+        orderDetails: reactive([]),
         searchedDetails: [],
 
          article: ref(''),
