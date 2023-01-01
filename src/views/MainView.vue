@@ -39,8 +39,8 @@
         </div>
 
         <div class="tables_container">
-            <app-table class="w49" :details="state.allDetails" @addToOrder="addToOrder" :in-order="true"/>
-            <app-table class="w49" :details="state.orderDetails" @deleteFromOrder="deleteFromOrder" :in-order="false"/>
+            <app-table class="w49" :details="state.allDetails" :in-order="true"/>
+            <app-table class="w49" :details="state.orderDetails" :in-order="false"/>
         </div>
     </div>
 </template>
@@ -54,14 +54,6 @@ import AppTable from '@/components/AppTable'
 
 const store = useStore()
 const state = store.state
-
-const addToOrder = (id) => {
-    state.orderDetails.push(state.allDetails.find(d => d.id === id))
-}
-
-const deleteFromOrder = (id) => {
-    state.orderDetails =  state.orderDetails.filter(d => d.id !== id)
-}
 
 
 </script>
