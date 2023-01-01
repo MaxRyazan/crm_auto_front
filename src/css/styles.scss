@@ -9,10 +9,28 @@
   border: 1px solid $border;
   color: $color;
 }
-@keyframes border {
+@keyframes red-border {
   50%{
     border: 1px solid red;
     box-shadow: 2px 2px red;
+  }
+  100%{
+    border: 1px solid black;
+  }
+}
+@keyframes steelblue-border {
+  50%{
+    border: 1px solid steelblue;
+    box-shadow: 2px 2px steelblue;
+  }
+  100%{
+    border: 1px solid black;
+  }
+}
+@keyframes green-border {
+  50%{
+    border: 1px solid green;
+    box-shadow: 3px 3px green;
   }
   100%{
     border: 1px solid black;
@@ -105,7 +123,7 @@ body, div{
     box-shadow: none;
   }
   &.btn_red{
-    animation: border 2s linear infinite;
+    animation: red-border 2s linear infinite;
     background-color: white;
     @include border_color(darkred, darkred);
     &:hover{
@@ -117,6 +135,19 @@ body, div{
     }
   }
 }
+.close_modal{
+  background-color: white;
+  color: black;
+  width: 20px;
+  height: 22px;
+  padding: 2px;
+  font-weight: bold;
+  @include border_color(teal, teal);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
 .confirm_order{
   margin-top: 10px;
   display: flex;
@@ -124,6 +155,7 @@ body, div{
 }
 .input{
   @include w_mw_bgc_bor_bor-r(15%, 100px, white, black, 4px);
+  animation: steelblue-border 3s linear infinite;
   padding: 10px 0;
   letter-spacing: 1px;
   outline: none;
@@ -131,8 +163,8 @@ body, div{
   &::placeholder{
     font-size: 12px;
   }
-  &:hover{
-    animation: border 3s linear infinite;
+  &:focus{
+    animation: green-border 2s linear infinite;
   }
 }
 .w49{
@@ -182,6 +214,11 @@ body, div{
 .description{
   position: relative;
   width: 14%;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .mark{
   width: 100%;
@@ -204,4 +241,17 @@ body, div{
   top: 50%;
   transform: translate(0, -50%);
   cursor: pointer;
+}
+.modal{
+  position: fixed;
+  top: 4%;
+  right: 7%;
+  left: 7%;
+  padding: 20px;
+  border: 2px solid teal;
+  background-color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow-y: scroll;
 }
