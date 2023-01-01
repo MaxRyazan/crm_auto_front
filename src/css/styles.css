@@ -280,6 +280,7 @@ body, div {
 }
 
 .order_container {
+  position: relative;
   width: 90%;
   margin: 5% 5%;
   padding: 10px;

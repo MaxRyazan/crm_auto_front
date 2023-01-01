@@ -1,5 +1,6 @@
 <template>
     <div class="order_container">
+        <button class="close_modal" @click="$router.push('/')">x</button>
         <div class="flex_around_container">
             {{ getters.showDateTimeNow }}
             <div>Default manager</div>
