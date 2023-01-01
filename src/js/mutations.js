@@ -24,5 +24,6 @@ export default {
 
     deleteThisFromOrder(state, id) {
             state.orderDetails =  state.orderDetails.filter(d => d.id !== id)
-        }
-    }
+        },
+
+}

@@ -27,13 +27,13 @@
                              @click="store.commit('deleteThisFromOrder', detail.id)"
                         >
                     </div>
-                    <AppDescriptionModal :detail="detail"  v-if="openModal" @closeModal="openModal = false"/>
+                    <AppDescriptionModal :detail="detail" v-if="openModal" @closeModal="openModal = false"/>
                 </div>
             </div>
         </transition-group>
         <div v-if="!inOrder && state.orderDetails.length" class="confirm_order">
             <div class="data_title">Сумма заказа:</div>
-            <app-button  v-if="!inOrder">Оформить</app-button>
+            <app-button  v-if="!inOrder" @click="$router.push('/order')">Оформить</app-button>
         </div>
     </div>
 </template>
