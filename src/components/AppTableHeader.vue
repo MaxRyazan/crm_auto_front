@@ -6,6 +6,7 @@
         <div class="table_title cell"><span>Артикул</span></div>
         <div class="table_title cell"><span>Производитель</span></div>
         <div class="table_title cell car_mark"><span>Марка</span></div>
+        <div class="table_title cell"><span>Цена</span></div>
         <div class="table_title cell description"><span>Описание</span></div>
     </div>
 </template>

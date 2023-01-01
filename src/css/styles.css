@@ -279,4 +279,22 @@ body, div {
   overflow-y: scroll;
 }
 
+.order_container {
+  width: 90%;
+  margin: 5% 5%;
+  padding: 10px;
+  border: 2px solid teal;
+}
+
+.flex_around_container {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.order_list {
+  width: 90%;
+  margin: 20px 5%;
+}
+
 /*# sourceMappingURL=styles.css.map */

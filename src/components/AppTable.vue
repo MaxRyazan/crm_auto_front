@@ -12,6 +12,7 @@
                     <div class="column">
                         <div class="mark" v-for="mark in detail.carMarks" :key="mark">{{ mark }}</div>
                     </div>
+                    <div class=" cell">{{detail.price}} &#8381;</div>
                     <div class="inline description">
                         <div class="cell" @click="openModal = true">{{detail.description}}</div>
                         <img v-if="inOrder"
@@ -32,7 +33,7 @@
             </div>
         </transition-group>
         <div v-if="!inOrder && state.orderDetails.length" class="confirm_order">
-            <div class="data_title">Сумма заказа:</div>
+            <div class="data_title">Сумма заказа: {{ store.getters.calculateSum }}</div>
             <app-button  v-if="!inOrder" @click="$router.push('/order')">Оформить</app-button>
         </div>
     </div>
@@ -56,8 +57,10 @@ defineProps({
     },
     inOrder: {
         type: Boolean,
-        required: false
+        required: false,
+        default: false
     }
 })
+
 </script>
 

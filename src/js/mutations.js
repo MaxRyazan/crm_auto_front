@@ -26,4 +26,5 @@ export default {
             state.orderDetails =  state.orderDetails.filter(d => d.id !== id)
         },
 
+
 }
