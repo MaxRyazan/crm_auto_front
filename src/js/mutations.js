@@ -4,13 +4,13 @@ export default {
      clearTable (){
         store.state.allDetails = []
     },
-    showTodayOrders(){
+    showActiveOrders(){
         console.log('1111')
     },
-    showAllActiveOrders(){
+    showDeadLineOrders(){
         console.log('111')
     },
-    showOrdersHistory(){
+    showMarketOrders(){
         console.log('1111')
     },
 

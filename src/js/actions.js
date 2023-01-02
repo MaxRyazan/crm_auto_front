@@ -29,5 +29,11 @@ export default {
                 return await response.json()
             }
         }
+    },
+
+    async findAllOrders(){
+        const orders = await fetch('http://localhost:8080/details/api/v1/order-all')
+        store.state.activeOrders =  await orders.json()
     }
+
 }

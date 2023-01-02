@@ -9,6 +9,7 @@ export default createStore({
         allDetails: reactive([]),
         orderDetails: reactive([]),
         searchedDetails: [],
+        activeOrders: reactive([]),
 
          article: ref(''),
          manufacturer: ref(''),

@@ -6,9 +6,9 @@
         </div>
 
         <div class="buttons_container">
-            <app-button @action="store.commit('showTodayOrders')">Сегодняшние заказы</app-button>
-            <app-button @action="store.commit('showAllActiveOrders')">Все активные заказы</app-button>
-            <app-button @action="store.commit('showOrdersHistory')">История заказов</app-button>
+            <app-button @action="$router.push('/active-orders')">Активные заказы</app-button>
+            <app-button @action="store.commit('showDeadLineOrders')">Просроченные заказы</app-button>
+            <app-button @action="store.commit('showMarketOrders')">Помеченные заказы</app-button>
         </div>
 
         <div class="inputs_container">
