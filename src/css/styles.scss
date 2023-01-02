@@ -282,3 +282,33 @@ body, div{
   margin-top: 2%;
   font-family: cursive;
 }
+.item_container {
+  max-height: 150px;
+  overflow-y: auto;
+  font-family: cursive;
+  padding: 10px 0;
+  width: 20%;
+  text-align: center;
+
+  &.details {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+  &.id{
+    width: 5%;
+  }
+}
+
+.detail_title {
+  width: 40%;
+}
+
+.detail_param {
+  width: 60%;
+}
+
+.details {
+  border: 2px solid teal;
+  margin-bottom: 2px;
+}
