@@ -312,3 +312,13 @@ body, div{
   border: 2px solid teal;
   margin-bottom: 2px;
 }
+.orders_buttons{
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.btn_close_order{
+  margin-top: 5px;
+  background-color: white;
+  @include border_color(red, red)
+}

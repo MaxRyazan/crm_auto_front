@@ -8,10 +8,10 @@
 import { useStore } from "vuex";
 import {useRoute} from "vue-router";
 import {computed, onMounted} from "vue";
-import AppOrder from "@/views/AppOrder";
+import AppOrder from "@/components/AppOrder";
 
 onMounted(() => {
-    store.dispatch('findAllOrders')
+    store.dispatch('findActiveOrders')
 })
 const route = useRoute().params.id
 const store = useStore()

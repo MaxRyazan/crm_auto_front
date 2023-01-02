@@ -7,8 +7,8 @@
 
         <div class="buttons_container">
             <app-button @action="$router.push('/active-orders')">Активные заказы</app-button>
-            <app-button @action="store.commit('showDeadLineOrders')">Просроченные заказы</app-button>
-            <app-button @action="store.commit('showMarketOrders')">Помеченные заказы</app-button>
+            <app-button @action="$router.push('/deadline-orders')">Просроченные заказы</app-button>
+            <app-button @action="$router.push('/marked-orders')">Помеченные заказы</app-button>
         </div>
 
         <div class="inputs_container">

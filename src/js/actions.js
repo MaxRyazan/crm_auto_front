@@ -31,9 +31,15 @@ export default {
         }
     },
 
-    async findAllOrders(){
-        const orders = await fetch('http://localhost:8080/details/api/v1/order-all')
+    async findActiveOrders(){
+        const orders = await fetch('http://localhost:8080/details/api/v1/order-active')
         store.state.activeOrders =  await orders.json()
-    }
+    },
+
+    async findDeadLineOrders(){
+        const orders = await fetch('http://localhost:8080/details/api/v1/order-deadline')
+        store.state.deadLineOrders =  await orders.json()
+    },
+
 
 }

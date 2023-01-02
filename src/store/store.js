@@ -10,6 +10,7 @@ export default createStore({
         orderDetails: reactive([]),
         searchedDetails: [],
         activeOrders: reactive([]),
+        deadLineOrders: reactive([]),
 
          article: ref(''),
          manufacturer: ref(''),
