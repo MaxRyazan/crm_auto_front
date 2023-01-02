@@ -9,6 +9,10 @@
   border: 1px solid $border;
   color: $color;
 }
+@mixin flex_justify($jc){
+  display: flex;
+  justify-content: $jc;
+}
 @keyframes red-border {
   50%{
     border: 1px solid red;
@@ -46,6 +50,7 @@ body, div{
 }
 .inline{
   display: flex;
+  position: relative;
 }
 .main_container{
   width: 98%;
@@ -56,20 +61,17 @@ body, div{
 }
 .personal_data{
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  @include flex_justify(space-between);
   margin-top: 20px;
 }
 .inputs_container{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  @include flex_justify(space-around);
   margin-top: 25px;
 }
 .buttons_container{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  @include flex_justify(space-around);
   margin-top: 25px;
   margin-bottom: 70px;
 }
@@ -174,8 +176,7 @@ body, div{
   position: relative;
   padding: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  @include flex_justify(space-around);
   margin-top: 10px;
   align-items: center;
   border: 1px solid darkgrey;
@@ -263,11 +264,21 @@ body, div{
   border: 2px solid teal;
 }
 .flex_around_container{
+  align-items: center;
   margin-top: 45px;
-  display: flex;
-  justify-content: space-around;
+  @include flex_justify(space-around);
+  &.order{
+    width: 90%;
+    margin: 20px 5%;
+    border: 2px solid teal;
+  }
 }
 .order_list{
   width: 90%;
   margin: 20px 5%;
+}
+.title{
+  margin-left: 5%;
+  margin-top: 2%;
+  font-family: cursive;
 }

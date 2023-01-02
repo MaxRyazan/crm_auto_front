@@ -1,6 +1,7 @@
 import MainView from '@/views/MainView'
 import OrderView from '@/views/OrderView'
 import ActiveOrdersView from '@/views/ActiveOrdersView'
+import ShowOrder from '@/views/ShowOrder'
 import {createRouter, createWebHistory} from "vue-router";
 
 
@@ -12,6 +13,10 @@ const routes = [
     {
         path: '/order',
         component: OrderView
+    },
+    {
+        path: '/active-orders/:id',
+        component: ShowOrder
     },
     {
         path: '/active-orders',

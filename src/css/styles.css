@@ -36,6 +36,7 @@ body, div {
 
 .inline {
   display: flex;
+  position: relative;
 }
 
 .main_container {
@@ -288,14 +289,26 @@ body, div {
 }
 
 .flex_around_container {
+  align-items: center;
   margin-top: 45px;
   display: flex;
   justify-content: space-around;
+}
+.flex_around_container.order {
+  width: 90%;
+  margin: 20px 5%;
+  border: 2px solid teal;
 }
 
 .order_list {
   width: 90%;
   margin: 20px 5%;
+}
+
+.title {
+  margin-left: 5%;
+  margin-top: 2%;
+  font-family: cursive;
 }
 
 /*# sourceMappingURL=styles.css.map */
