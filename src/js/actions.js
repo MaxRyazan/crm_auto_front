@@ -36,6 +36,10 @@ export default {
         store.state.activeOrders =  await orders.json()
     },
 
+    async findMarkedOrders(){
+        const orders = await fetch('http://localhost:8080/details/api/v1/order-marked')
+        store.state.markedOrders =  await orders.json()
+    },
     async findDeadLineOrders(){
         const orders = await fetch('http://localhost:8080/details/api/v1/order-deadline')
         store.state.deadLineOrders =  await orders.json()

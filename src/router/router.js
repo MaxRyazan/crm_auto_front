@@ -3,6 +3,7 @@ import OrderView from '@/views/OrderView'
 import ActiveOrdersView from '@/views/ActiveOrdersView'
 import ShowOrder from '@/views/ShowOrder'
 import DeadlineOrdersView from '@/views/DeadlineOrdersView'
+import MarkedOrdersView from '@/views/MarkedOrdersView'
 import {createRouter, createWebHistory} from "vue-router";
 
 
@@ -26,6 +27,10 @@ const routes = [
     {
         path: '/deadline-orders',
         component: DeadlineOrdersView
+    },
+    {
+        path: '/marked-orders',
+        component: MarkedOrdersView
     }
 ]
 

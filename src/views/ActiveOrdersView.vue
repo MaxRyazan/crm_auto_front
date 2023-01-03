@@ -1,5 +1,5 @@
 <template>
-    <app-order-category :orderCategoryArray="store.state.activeOrders" :path="`active-orders`">Активные заказы</app-order-category>
+    <app-order-category :orderCategoryArray="store.state.activeOrders" :path="`active-orders`"><router-link to="/" style="text-decoration: none">Главная / </router-link>Активные заказы</app-order-category>
 </template>
 
 <script setup>
