@@ -41,5 +41,13 @@ export default {
         store.state.deadLineOrders =  await orders.json()
     },
 
-
+    async closeOrder(_, order) {
+        order.status = 'CLOSED'
+        store.state.deadLineOrders = store.state.deadLineOrders.filter(o => o.id !== order.id)
+        store.state.activeOrders = store.state.activeOrders.filter(o => o.id !== order.id)
+        await fetch('http://localhost:8080/details/api/v1/order-new', {
+            method: 'POST',
+            body: JSON.stringify(order)
+        })
+    }
 }

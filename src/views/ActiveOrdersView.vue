@@ -1,5 +1,5 @@
 <template>
-    <app-order-category :orderCategoryArray="store.state.activeOrders" :path="`active-orders`" @closeOrder="closeOrder">Активные заказы</app-order-category>
+    <app-order-category :orderCategoryArray="store.state.activeOrders" :path="`active-orders`">Активные заказы</app-order-category>
 </template>
 
 <script setup>
@@ -12,12 +12,4 @@ onMounted(() => {
     store.dispatch('findActiveOrders')
 })
 
-const closeOrder = (order) => {
-    order.status = 'CLOSED'
-    store.state.activeOrders = store.state.activeOrders.filter(o => o.id !== order.id)
-    fetch('http://localhost:8080/details/api/v1/order-new', {
-        method: 'POST',
-        body: JSON.stringify(order)
-    })
-}
 </script>

@@ -16,7 +16,7 @@ const routes = [
         component: OrderView
     },
     {
-        path: '/active-orders/:id',
+        path: '/orders/:id',
         component: ShowOrder
     },
     {
