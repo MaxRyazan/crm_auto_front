@@ -51,7 +51,10 @@ import AppPersonalData from "@/components/AppPersonalData";
 import AppInput from '@/components/AppInput'
 import { useStore } from 'vuex'
 import AppTable from '@/components/AppTable'
-
+import {onMounted} from "vue";
+onMounted( () => {
+    store.dispatch('findAllOrders')
+})
 const store = useStore()
 const state = store.state
 

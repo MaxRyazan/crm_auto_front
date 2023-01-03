@@ -40,6 +40,10 @@ export default {
         const orders = await fetch('http://localhost:8080/details/api/v1/order-deadline')
         store.state.deadLineOrders =  await orders.json()
     },
+    async findAllOrders(){
+        const orders = await fetch('http://localhost:8080/details/api/v1/order-all')
+        store.state.allOrders =  await orders.json()
+    },
 
     async closeOrder(_, order) {
         order.status = 'CLOSED'

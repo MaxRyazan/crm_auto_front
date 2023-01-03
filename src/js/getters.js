@@ -8,5 +8,6 @@ export default {
     showDateTimeNow(){
         const newDate = new Date()
         return  newDate.getDay() + 1 + '-' + newDate.getMonth() + 1 + '-' + newDate.getFullYear() + ' Time: ' + newDate.getHours() + ':' + newDate.getMinutes()
-    }
+    },
+
 }

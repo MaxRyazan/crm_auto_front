@@ -11,12 +11,14 @@ export default createStore({
         searchedDetails: [],
         activeOrders: reactive([]),
         deadLineOrders: reactive([]),
+        allOrders: reactive([]),
 
          article: ref(''),
          manufacturer: ref(''),
          name: ref(''),
          vin: ref(''),
-         carMark: ref('')
+         carMark: ref(''),
+
     },
     actions: actions,
     getters: getters,
